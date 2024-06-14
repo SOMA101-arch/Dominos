@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+nav{
+    /* border: 1px solid black; */
+    height: 40px;
+    width: 100%;
+    background-color: rgb(26, 73, 114);
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+    /* position: fixed; */
+}
+
+nav h1{
+  padding-right:200px;
+  color: rgba(255, 255, 255, 0.928);
+}
+
+nav li{
+    list-style: none;
+    padding: 10px;
+    color: antiquewhite;
+}
+
+section{
+    /* border: 1px solid black; */
+    height: 350px;
+    width: 100%;
+    display: flex;
+   background-color: rgb(194, 164, 130);
+}
+#top1{
+    /* order: 1px solid black; */
+    height: 350px;
+    width: 50%;
+    padding-left: 80px;
+}
+#top1 img{
+    order: 1px solid black;
+    height: 120px;
+    width: 120px;
+    padding-left: -40px;
+}
+#top1 h1{
+    padding-top: 60px;
+    text-decoration: underline;
+}
+#top1 li{
+    list-style: none;
+    width: 400px;
+    padding-top: 30px;
+    padding-left: 400px;
+}
+
+#top2{
+    /* order: 1px solid black; */
+    height: 350px;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+footer{
+    /* order: 1px solid black; */
+    height: 90px;
+    width: 100%;
+    background-color: rgb(22, 19, 19);
+    display: flex;
+}
+footer li{
+    list-style: none;
+    color: rgb(209, 201, 201);
+    font-size: 10px;
+    padding: 10px;
+    padding-top: 70px;
+}
+footer h3{
+    color: rgb(209, 201, 201);
+    font-size: 15px;
+    padding: 40px;
+    padding-left: 150px;
+}
+</style>
+
+    
+</head>
+<body>
+    <nav>
+        <h1>Domino's Pizza</h1>
+        <li>Phone pe</li>
+        <li>Google pe</li>
+        <li>Paytm</li>
+        <li>Card</li>
+    </nav>
+    <section>
+        <div id="top1">
+            <h1>Domino's Payment Section</h1><br><br>
+             <input type="text" id="" placeholder="Total Bill"><br><br>
+             <h2>Please enter input</h2>
+             <img src="" alt=""><br><br>
+             <button type="button">Payment</button>
+        </div>
+        <div id="top2">
+          <img id="img1" src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHVucGxhc2glMjBkb21pbm8ncyUyMHBheW1lbnQlMjBzY2FubmVyJTIwaW1nfGVufDB8fDB8fHww" alt="" height="250px" width="350px">
+        </div>
+    </section>
+      <footer>
+            <li>Declaimer</li>
+            <li>privecy policy</li>
+            <li>information</li>
+            <li>Term and condtion</li>
+            <li>Feedback</li>
+            <h3>Domino's APP</h3>
+      </footer>
+      <script>
+    
+         let h2=document.getElementsByTagName("h2")[0]
+        //  console.log(h2);
+         h2.style.display="none"
+         let input=document.querySelector("input")
+         let button=document.querySelector("button")
+         let img=document.querySelector("img")
+         img.style.display="none"
+
+         button.addEventListener("click",()=>{
+            if(input.value.length===0){
+                h2.style.display="block"
+                img.style.display="none"
+            }else{
+                h2.style.display="none"
+                img.style.display="block"
+            }
+            img.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+input.value       })
+      </script>
+</body>
+</html>

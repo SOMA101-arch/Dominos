@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+nav{
+    /* border: 1px solid black; */
+    height: 40px;
+    width: 100%;
+    background-color: rgb(26, 73, 114);
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+    /* position: fixed; */
+}
+
+nav h1{
+  padding-right:200px;
+  color: rgba(255, 255, 255, 0.928);
+}
+
+nav li{
+    list-style: none;
+    padding: 10px;
+    color: antiquewhite;
+}
+
+section{
+    /* border: 1px solid black; */
+    height: 450px;
+    width: 100%;
+    display: flex;
+   background-color: rgb(219, 212, 204);
+}
+#top1{
+    /* order: 1px solid black; */
+    height: 350px;
+    width: 50%;
+    padding-left: 80px;
+}
+#b1{ 
+    font-size: 12px;
+    border: 1px solid black;
+    height: 20px;
+    width: 100px;
+    border-radius: 20px;
+}
+#top1 h1{
+    padding-top: 60px;
+    text-decoration: underline;
+}
+#top1 li{
+    list-style: none;
+    width: 400px;
+    padding-top: 30px;
+    
+}
+
+#top2{
+    /* order: 1px solid black; */
+    height: 450px;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+footer{
+    /* order: 1px solid black; */
+    height: 90px;
+    width: 100%;
+    background-color: rgb(22, 19, 19);
+    display: flex;
+}
+footer li{
+    list-style: none;
+    color: rgb(209, 201, 201);
+    font-size: 10px;
+    padding: 20px;
+    padding-top: 70px;
+}
+footer h3{
+    color: rgb(209, 201, 201);
+    font-size: 15px;
+    padding: 40px;
+    padding-left: 150px;
+}
+</style>
+
+    
+</head>
+<body>
+    <nav>
+        <h1>Domino's Pizza</h1>
+        <li>Order</li>
+        <li>Price</li>
+        <li>Quantity</li>
+        <li>place</li>
+    </nav>
+    <section>
+        <div id="top1">
+           <li>Pizza size:<input type="text" placeholder="large/medium/small"></li>
+           <button>ORDER</button>
+           <h4>you are selected large=200</h4>
+           <h4>you are selected medium=150</h4>
+           <h4>you are selected small=100</h4>
+           <li>Extra chicken:</li>
+           <label for="email"> Yes:</label>
+            <input type="checkbox" name="checkbox" id="yes1">
+            <label for="email"> No:</label>
+            <input type="checkbox" name="checkbox" id="No1">
+            <h4>you are selected chicken=50</h4>
+           <h4>Thank you</h4>
+            <li>Extra cheese:</li>
+            Yes:<input type="checkbox" name="gender" id="yes2">
+            No:<input type="checkbox" name="gender" id="No2">
+            <h4>you are selected cheese=50</h4>
+            <h4>Thank you</h4>
+            <button>Confirm</button>
+            <li>Total bill:</li>
+            <h4></h4>
+            
+        
+        </div>
+        <div id="top2">
+          <img src="https://images.unsplash.com/photo-1608403350158-01c49404f7f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHVucGxhc2glMjBkb21pbm8nc3xlbnwwfHwwfHx8MA%3D%3D" alt="" height="280px" width="350px">
+        </div>
+    </section>
+      <footer>
+            <li>Declaimer</li>
+            <li>privecy policy</li>
+            <li>information</li>
+            <li>Term and condtion</li>
+            <li>Feedback</li>
+            <h3>Domino's APP</h3>
+      </footer>
+      <script>
+        let input=document.getElementsByTagName("input")[0]
+        let button=document.getElementsByTagName("button")[0]
+        let h4=document.getElementsByTagName("h4")[0]
+        let h41=document.getElementsByTagName("h4")[1]
+        let h42=document.getElementsByTagName("h4")[2]
+        let h43=document.getElementsByTagName("h4")[3]
+        let h44=document.getElementsByTagName("h4")[4]
+        let h45=document.getElementsByTagName("h4")[5]
+        let h46=document.getElementsByTagName("h4")[6]
+        let h47=document.getElementsByTagName("h4")[7]
+        let yes1=document.getElementById("yes1")
+        let button1=document.getElementsByTagName("button")[1]
+        h4.style.display="none"
+        h41.style.display="none"
+        h42.style.display="none"
+        h43.style.display="none"
+        h44.style.display="none"
+        h45.style.display="none"
+        h46.style.display="none"
+
+    let bill=0;
+        button.addEventListener("click",()=>{
+           if(input.value==="large"){
+            h4.style.display="block"
+            bill+=200;
+        }else if(input.value==="medium"){
+            h41.style.display="block"
+            bill+=150;
+        }else if(input.value==="small"){
+            h42.style.display="block"
+            bill+=100;
+        }else{
+            alert("enter correct input")
+        }
+    })
+           
+           yes1.addEventListener("click",()=>{
+            h43.style.display="block"
+            bill+=50;
+        })
+        No1.addEventListener("click",()=>{
+            h44.style.display="block"
+        })
+        yes2.addEventListener("click",()=>{
+            h45.style.display="block"
+            bill+=50;
+        })
+        No2.addEventListener("click",()=>{
+            h46.style.display="block"
+        })
+     button1.addEventListener("click",()=>{
+         h47.innerHTML+=`${bill}`   
+         
+     })
+   
+       
+      </script>
+</body>
+</html> 
